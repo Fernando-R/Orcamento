@@ -1,0 +1,93 @@
+
+.popup{
+    background-color: rgb(0,0,0,.5);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup > div{
+    background-color: white;
+    height: auto;
+    width: auto;
+    padding:10px 20px;
+    position: relative;
+    border: 10px solid var(--sc);
+    box-shadow: 0 0 0 10px white;
+    padding: 1% 3% 3.5% 3%;
+    display: flex;
+    flex-direction: column;
+}
+.invisivel{
+    display: none;
+}
+.sair{
+    position: absolute; 
+    top: -2px;
+    right: -2px;
+    margin: 1%;
+    width:auto;
+    height: auto;
+    font-size: 0.7vw;
+    cursor: pointer;
+    background-color: var(--sc);
+    color: white;
+    padding: 0% 1%;
+}
+.ebtn{
+    width:auto;
+    height: auto;
+    cursor: pointer;
+    background-color: var(--sc);
+    color: var(--t);
+    position: absolute;
+    font-size: 1vw;
+    top: 85%;
+    padding: 0% 2%;
+    right: 5px;
+}
+.cbtn{
+    width:auto;
+    height: auto;
+    cursor: pointer;
+    background-color: var(--sc);
+    color: var(--t);
+    position: absolute;
+    font-size: 1vw;
+    top: 85%;
+    padding: 0% 2%;
+    left: 5px;
+}
+.hbtn{
+    cursor: pointer;
+    background-color: var(--sc);
+    position: fixed;
+    top: 87%;
+    font-size: 1vw; 
+    height: 5vh;
+    padding: 0% 2%;
+    color: var(--t);
+}
+.apop{
+    right: 15%;
+}
+.reset{
+    left: 15%;
+}
+.txt{
+    font-size: 1.2vw; 
+}
+.pag{
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+.rd{
+    width: 1.2vw;
+    height: 1vw;
+}
+

@@ -1,0 +1,181 @@
+<head>
+    <meta charset="utf-8">
+    <title>Cimentos</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="title">Cimentos</div>
+    <form action="carrinho.php" method="POST">
+        <section id="pop" class="popup invisivel">
+            <div>
+                <div>
+                    <p class="txt">Por favor, digite seu nome para que possamos salvar seu orçamento</p>
+                    <p class="txt">ou clique em consultar orçamento para ver um orçamento existente.</p>
+                </div>
+                <input type="button" class="sair" value="X" onclick="fpopup()"><br>
+                <label for="user" class="txt">Digite seu nome:</label>
+                <input class="txt" type="text" name="user" required placeholder="Nome">
+                <input class="cbtn" type="button" onclick='window.location.replace("consulta.php")' value="Consultar orçamento">
+                <div class="pag">
+                    <input type='radio' class="rd" name='pagamento' id="c" value='C' checked><label for="c" class="txt">Crédito&nbsp&nbsp</label>
+                    <input type='radio' class="rd" name='pagamento' value='D' id="d"><label for="d" class="txt">Débito (5% de desconto)</label>
+                </div>
+                <input class="ebtn" type="submit">
+            </div>
+        </section>
+        <div id="parea"></div><br>
+        <input type="reset" onclick="resetF()" class="reset hbtn" id="reset">
+        <input class="apop hbtn" type="button" value="Next" onclick="apopup();" id="btn">
+    </form>
+
+    <script>
+        var a = 0; var ap = 19.99;
+        var b = 0; var bp = 18.00;
+        var c = 0; var cp = 19.00;
+        var d = 0; var dp = 19.50;
+        var e = 0; var ep = 18.30;
+
+        var parea = document.getElementById('parea')
+        resetF()
+
+        function addP(p) {
+
+
+            switch (p) {
+                case 'a':
+                    a++
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'b':
+                    b++
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'c':
+                    c++
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'd':
+                    d++
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'e':
+                    e++
+                    parea.innerHTML = reLoadTem()
+                    break;
+                default:
+                    parea.innerHTML = reLoadTem()
+            }
+        }
+        function subP(p) {
+
+            switch (p) {
+                case 'a':
+                    if (a > 0) {
+                        a--
+                    }
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'b':
+                    if (b > 0) {
+                        b--
+                    }
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'c':
+                    if (c > 0) {
+                        c--
+                    }
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'd':
+                    if (d > 0) {
+                        d--
+                    }
+                    parea.innerHTML = reLoadTem()
+                    break;
+                case 'e':
+                    if (e > 0) {
+                        e--
+                    }
+                    parea.innerHTML = reLoadTem()
+                    break;
+                default:
+                    parea.innerHTML = reLoadTem()
+            }
+        }
+
+        function reLoadTem() {
+            let template = `<div class="bs">
+                            <div class="prod c1">
+                                <img src="public/imgs/cimento.png">
+                                    <div class="np">Cimento - Todas as Obras</div><div class="np">${printMoney(ap)}</div>
+                                    <div class = "bot">
+                                        <input type="button" onclick="subP('a')" value="-" class="addB">${a}<input type="button" onclick="addP('a')" value="+" class="subB">
+                                    </div>
+                                <input type="number" class="hide" name="prod1" value = "${a}">
+                            </div>
+                            <div class="prod c2">
+                                <img src="public/imgs/cimento-2.png">
+                                    <div class="np">Cimento - Obras Basicas</div><div class="np">${printMoney(bp)}</div>
+                                    <div class = "bot">
+                                        <input type="button" onclick="subP('b')" value="-" class="addB">${b}<input type="button" onclick="addP('b')" value="+" class="subB">
+                                    </div>
+                                <input type="number" class="hide" name="prod2" value = "${b}">
+                            </div>
+                            <div class="prod c3">
+                                <img src="public/imgs/cimento-3.png">
+                                    <div class="np">Cimento - Obras Estruturais</div><div class="np">${printMoney(cp)}</div>
+                                    <div class = "bot">
+                                        <input type="button" onclick="subP('c')" value="-" class="addB">${c}<input type="button" onclick="addP('c')" value="+" class="subB">
+                                    </div>
+                                <input type="number" class="hide" name="prod3" value = "${c}">
+                            </div>
+                            <div class="prod c4">
+                                <img src="public/imgs/cimento-4.png">
+                                    <div class="np">Cimento - Obras Especiais</div><div class="np">${printMoney(dp)}</div>
+                                    <div class = "bot">
+                                        <input type="button" onclick="subP('d')" value="-" class="addB">${d}<input type="button" onclick="addP('d')" value="+" class="subB">
+                                    </div>
+                                <input type="number" class="hide" name="prod4" value = "${d}">
+                            </div>
+                            <div class="prod c5">
+                                <img src="public/imgs/cimento-5.png">
+                                    <div class="np">Cimento - Obras Especiais Agressivo</div><div class="np">${printMoney(ep)}</div>
+                                    <div class = "bot">
+                                        <input type="button" onclick="subP('e')" value="-" class="addB">${e}<input type="button" onclick="addP('e')" value="+" class="subB">
+                                    </div>
+                                <input type="number" class="hide" name="prod5" value = "${e}">
+                            </div>
+                        </div>`
+
+            return template;
+        }
+
+        function resetF() {
+            a = 0; ap = 19.99;
+            b = 0;
+            c = 0;
+            d = 0;
+            e = 0;
+
+            parea.innerHTML = reLoadTem()
+        }
+        function printMoney(n) {
+            n = n.toFixed(2)
+            n = n.replace(".", ",")
+            n = "R$" + n
+            return n
+        }
+        function apopup() {
+            document.getElementById("pop").classList.remove("invisivel");
+            document.getElementById("btn").classList.add("invisivel");
+            document.getElementById("reset").classList.add("invisivel");
+        }
+        function fpopup() {
+            document.getElementById("pop").classList.add("invisivel");
+            document.getElementById("btn").classList.remove("invisivel");
+            document.getElementById("reset").classList.remove("invisivel");
+        }
+    </script>
+</body>

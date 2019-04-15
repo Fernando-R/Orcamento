@@ -1,0 +1,50 @@
+.base{
+    background-color: white;
+    height: auto;
+    width: auto;
+    /*padding:10px 20px;*/
+    margin: 2% 5%;
+    position: relative;
+    border: 10px solid var(--sc);
+    box-shadow: 0 0 0 10px white;
+    padding: 1% 3% 3.5% 3%;
+    text-align: center;
+    border-radius: 10px;
+}
+.txt2{
+    font-size: 2vw;
+}
+.hide{
+    display: none;
+}
+.btn{
+    cursor: pointer;
+    background-color: var(--sc);
+    font-size: 1vw; 
+    height: 5vh;
+    padding: 0% 2%;
+    color: var(--t);
+}
+.cobtn{
+    top: 87%;
+    right: 30%;
+    position: absolute;
+}
+.cabtn{
+    top: 87%;
+    left: 30%;
+    position: absolute;
+}
+.csobtn{
+    top: 80%;
+    left: 30%;
+    position: absolute;
+}
+.foobtn{
+    top: 80%;
+    right: 30%;
+    position: absolute;
+}
+.consbtn > input{
+    margin: 1% 0% 0.5% 0%;
+}

@@ -1,0 +1,95 @@
+/*@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);*/
+@import url("Pop-up.css");
+@import url("carrinho.css");
+*{
+    --bg: #5A0E69;
+    --sc: #763982;
+    --t: #ffffff;
+    font-family: 'Roboto Condensed';
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: var(--bg);
+}
+.prod{
+    background-color: var(--sc);
+    height: 90%;
+    width: 50%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    color: var(--t);
+}
+.title{
+    color: var(--t);
+    grid-area: t;
+    font-size: 5vh;
+    text-align: center;
+    background-color: var(--sc);
+    margin: 1% 5%;
+    border-radius: 10px;
+}
+img{
+    width: 100%;
+    height: 55%
+}
+.np{
+    font-size: 1vw;
+    margin-top: 5%;
+    text-align: center;
+}
+.bot{
+    margin-top: 6%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 1.2vw
+}
+.addB{
+    margin-right: 25%;
+    font-size: 100%;
+    width: 2vw;
+    height: 4vh;
+}
+.subB{
+    margin-left: 25%;
+    font-size: 100%;
+    width: 2vw;
+    height: 4vh;
+}
+
+.hide{
+    display: none;
+}
+.bs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 40vh 40vh;
+    grid-template-areas: "c1 c2 c3"
+                         "c4 c45 c5";
+    padding: 1px;
+}
+.c1{
+    grid-area: c1;
+    margin-left: auto;
+}
+.c2{
+    grid-area: c2;
+    margin: 0% auto;
+}
+.c3{
+    grid-area: c3;
+    
+}
+.c4{
+    grid-area: c45;
+    margin-top: 5%;
+    margin-left: -16%;
+}
+.c5{
+    grid-area: c45;
+    margin-top: 5%;
+    margin-left: 61%;
+}

@@ -9,7 +9,7 @@
       include "Item/Item.php";
       date_default_timezone_set('America/Sao_Paulo');
 
-      $Iprices = [19.99, 18.00, 19.00, 19.50, 18.30];
+      $Iprices = [19.98, 18.00, 19.00, 19.50, 18.30];
 
       if($_POST['pagamento'] == 'D'){
         $aux = [];
